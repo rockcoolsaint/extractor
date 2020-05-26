@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+
+    <meta charset="utf-8">
+    <title>Wiki-Cats</title>
+    
+    <style type="text/css">
+      #main {
+        width: 71%;
+        margin: auto;
+        display: flex;
+        flex-wrap: wrap;
+      }
+
+      figure {
+        border: thin #c0c0c0 solid;
+        display: flex;
+        flex-flow: column;
+        padding: 5px;
+        max-width: 220px;
+      }
+
+      img {
+        max-width: 220px;
+        max-height: 150px;
+      }
+
+      figcaption {
+        background-color: #222;
+        color: #fff;
+        font: italic smaller sans-serif;
+        padding: 3px;
+        text-align: center;
+      }
+    </style>
+
+  </head>
+  <body>
+    <div id="main">
+      <% @meta_list.each do |meta| %>
+        <figure>
+          <img src="<%= meta[:image] %>">
+          <figcaption><%= meta[:title] %></figcaption>
+        </figure> 
+      <% end %>
+    </div>
+  </body>
+</html>
